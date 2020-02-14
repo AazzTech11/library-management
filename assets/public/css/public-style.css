@@ -1,0 +1,129 @@
+/**
+* @package  Library Management
+*/
+/**********************************************************************
+                        START For Registation Page
+*********************************************************************/
+div.atlm-form-container {
+    background-image: url(img/bg-book-1.jpg);
+    background-size: cover;
+    padding: 50px 0;
+}
+
+form.afc__form {
+    width: 45%;
+    margin: auto;
+}
+
+form.afc__form-title {
+    font-size: 40px;
+    color: black;
+}
+
+div.afc__input-full-width {
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 98%;
+}
+
+div.afc__input-half-width {
+    width: 48%;
+    float: left;
+    margin: 12px 0;
+    margin-right: 2%;
+}
+
+label.afc__radio-label {
+    float: left;
+    margin-right: 10%;
+}
+
+div.afc__radio-opt-group {
+    float: left;
+    margin-right: 25px;
+}
+
+label.afc__radio-opt-label {
+    float: left;
+    margin-right: 12px;
+}
+
+.afc__radio-opt{}
+
+.afc__student-area{
+    /*display: none;*/
+}
+
+.afc__other-area{
+    /*display: none;*/
+}
+
+button.afc__image-btn-area{
+    width: 35%;
+    float: left;
+}
+
+button.afc__button {
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+.afc__image-container{}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+    opacity: 1; /* Firefox */
+}
+
+textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+    opacity: 1; /* Firefox */
+}
+/**********************************************************************
+                        END For Registation Page
+***********************************************************************/
+
+
+/**********************************************************************
+                      START For Display All Book Page
+***********************************************************************/
+div.atlm-display-container {
+    border: 1px solid #EEEEEE;
+    text-align: center;
+}
+
+div.adc__book {
+    width: 22%;
+    margin: auto;
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+    max-height: 300px;
+}
+
+.adc__book-image{}
+
+div.adc__book-details h4 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+div.adc__book-details h5 {
+    padding: 0;
+    margin: 10px;
+    font-size: 12px;
+}
+
+.Book Name{}
+.Writer Name{}
+.Edition{}
+.Publish Year{}
+.adc__about-book{}
+.
+/**********************************************************************
+                      END For Display All Book Page
+***********************************************************************/
+
+
