@@ -4,6 +4,7 @@
  */
 
 namespace Inc\Base;
+
 use Inc\Base\Helper;
 
 if( ! class_exists( 'Activate' ) ) {
@@ -76,7 +77,6 @@ if( ! class_exists( 'Activate' ) ) {
             foreach( $pages as $page ) {
                 if ( ! post_exists( $page['post_title'] ) ) {
                     $page = array(
-
                         'post_content'  => $page['post_content'],   //content of page
                         'post_title'    => $page['__post_title'],   //title of page
                         'post_name'     => $page['__post_title'],

@@ -20,18 +20,17 @@ if ( ! class_exists( 'Helper' ) ) {
 
         /* This function catch and return the file path. Which file we want to include,
         we use this for require the shortcode template from only 'View' folder */
-        public static function get_view($template, $data = [])
+        public static function get_view( $template, $data = [] )
         {
-            //$content = '';
+            $content = '';
             $path = PLUGIN_DIRNAME . "/Inc/view/$template.php";
-            if (file_exists($path)) {
+            if (file_exists( $path ) ) {
                 ob_start();
-                require_once($path);
+                require_once( $path );
                 $content = ob_get_contents();
                 ob_get_clean();
                 return $content;
             }
-
         }
 
         /* This function don't use for 'Include or Require' the template. This function

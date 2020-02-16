@@ -24,7 +24,20 @@ if( ! class_exists( 'ShortcodeAllBooks' ) ) {
             return $content;*/
 
             // This is alternate way to include the file from above way
-            return Helper::get_view( 'shortcode-templates/all-books' );
+
+            $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+            $postsPerPage = 1;
+
+            $args = array(
+                'post_type' => 'at-book-cpt',
+                'posts_per_page' => $postsPerPage,
+                'paged' => $paged,
+            );
+            $posts = new \WP_Query( $args );
+            $data = [
+                'posts' => $posts
+            ];
+            return Helper::get_view( 'shortcode-templates/all-books', $data );
         }
     }
 }

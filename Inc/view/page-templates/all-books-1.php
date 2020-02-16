@@ -5,7 +5,7 @@ Template Name: All Books -1
 get_header();
 ?>
 <div class="wrap">
-    <h2><?php echo the_title(); ?></h2>
+    <h2 class="atlm-title"><?php echo the_title(); ?></h2>
     <div class="atlm-display-container">
         <?php
         $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;

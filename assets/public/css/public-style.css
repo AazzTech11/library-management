@@ -88,9 +88,16 @@ textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 /**********************************************************************
                       START For Display All Book Page
 ***********************************************************************/
+h2.atlm-title {
+    text-align: center;
+    font-size: 45px;
+}
+
 div.atlm-display-container {
     border: 1px solid #EEEEEE;
     text-align: center;
+    box-shadow: 0px 0px 20px darkgrey;
+    padding-top: 15px;
 }
 
 div.adc__book {
@@ -99,10 +106,13 @@ div.adc__book {
     display: inline-block;
     margin: 10px;
     overflow: hidden;
-    max-height: 300px;
+    max-height: 310px;
 }
 
-.adc__book-image{}
+div.adc__book-image img{
+    width: 115px;
+    height: 160px;
+}
 
 div.adc__book-details h4 {
     padding: 0;
@@ -113,15 +123,59 @@ div.adc__book-details h4 {
 div.adc__book-details h5 {
     padding: 0;
     margin: 10px;
-    font-size: 12px;
+    font-size: 11px;
+    text-transform: capitalize;
 }
+
+
+
+
+
+
+
 
 .Book Name{}
 .Writer Name{}
 .Edition{}
 .Publish Year{}
 .adc__about-book{}
-.
+
+div.atlm-search-container {
+    margin-bottom: 50px;
+}
+
+div.asc__filter-area {
+    border: 1px solid gray;
+    width: 30%;
+    float: left;
+    border-radius: 3px;
+}
+
+div.asc__filter-area label{}
+
+div.asc__book-search-area {
+    overflow: hidden;
+}
+
+div.asc__book-search-area input{
+    width: 85%;
+    float: left;
+}
+
+div.asc__book-search-area button{
+    width: 15%;
+}
+
+
+
+
+
+
+div.atlm-pagination-container{
+    width: 35%;
+    margin: auto;
+    margin-top: 40px;
+}
 /**********************************************************************
                       END For Display All Book Page
 ***********************************************************************/
