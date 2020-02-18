@@ -61,12 +61,17 @@ function init_file()
     return new Init;
 }
 
-register_activation_hook( __FILE__, 'atlyman_activate' );
+
 
 function atlyman_activate()
 {
     $activation = new Activate();
     $activation->register();
 }
+// This hook run when plugin are active
+register_activation_hook( __FILE__, 'atlyman_activate' );
 
+
+
+// This hook run when plugin are deactive
 //register_deactivation_hook( __FILE__, 'atlyman_activate' );
