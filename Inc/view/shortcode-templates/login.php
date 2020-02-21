@@ -8,8 +8,8 @@
                 if( $data['error_empty_field'] ){
                     echo $data['error_empty_field'];
                 }else{
-                    echo $data['error_invalide_username'];
-                    echo $data['error_invalide_email'];
+                    echo $data['error_invalide_username']."<br>";
+                    echo $data['error_invalide_email']."<br>";
                     echo $data['error_password_mismatch'];
                 }
                 ?>
