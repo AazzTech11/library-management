@@ -62,12 +62,16 @@ if( ! class_exists( 'ShortcodeLogin' ) ) {
                 }
 
                 if( empty( $error ) ){
-                    wp_setcookie( $_POST['atlyman_user_name'], $_POST['atlyman_password'], true );
+                    /*wp_setcookie( $_POST['atlyman_user_name'], $_POST['atlyman_password'], true );
                     wp_set_current_user($user->ID, $_POST['atlyman_user_name'] );
                     do_action( 'wp_login', $_POST['atlyman_user_name'] );
 
                     wp_redirect( home_url() );
-                    exit;
+                    exit;*/
+
+                    if( is_user_logged_in() ){
+
+                    }
                 }
             }
 

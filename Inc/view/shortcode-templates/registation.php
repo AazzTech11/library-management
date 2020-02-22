@@ -24,10 +24,10 @@ $genders = array(
                     if ($data['error_empty_field']) {
                         echo $data['error_empty_field'];
                     } else {
-                        echo $data['error_atlyman_user_name']."<br>";
-                        echo $data['error_invalide_username']."<br>";
-                        echo $data['error_invalide_email']."<br>";
-                        echo $data['error_unavailable_email']."<br>";
+                        echo $data['error_atlyman_user_name'];
+                        echo $data['error_invalide_username'];
+                        echo $data['error_invalide_email'];
+                        echo $data['error_unavailable_email'];
                         echo $data['error_password_mismatch'];
                     }
                 }
@@ -57,7 +57,7 @@ $genders = array(
             </div>
             <div class="afc__input-half-width">
                 <label for="atlyman_reader_id"><?php _e( 'Employee or Student ID', 'atlibraryman' ); ?></label>
-                <input type="number" name="atlyman_reader_id" id="atlyman_reader_id" value="<?php echo $data['readerId']; ?>" placeholder="Your ID">
+                <input type="text" name="atlyman_reader_id" id="atlyman_reader_id" value="<?php echo $data['readerId']; ?>" placeholder="Your ID">
             </div>
             <div class="afc__input-half-width">
                 <label for="atlyman_email"><?php _e( 'Email', 'atlibraryman' ); ?></label>

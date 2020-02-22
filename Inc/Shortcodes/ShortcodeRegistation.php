@@ -90,6 +90,32 @@ if( ! class_exists( 'ShortcodeRegistation' ) ) {
                         'user_pass'         => $password,
                         'user_registered'   => date('Y-m-d H:i:s'),
                     ) );
+
+                    $registeringUser    = get_userdatabylogin( $userName );
+                    $registeringUser    = get_user_by( 'ID', $registeringUser->ID );
+                    $registeringUserID  = $registeringUser->ID;
+
+                    $getProfession      = get_user_meta( $registeringUserID, 'atlyman_profession', true );
+                    $getReaderId        = get_user_meta( $registeringUserID, 'atlyman_reader_id', true );
+                    $getConfirmPassword = get_user_meta( $registeringUserID, 'atlyman_confirm_password', true );
+                    $getMobile          = get_user_meta( $registeringUserID, 'atlyman_mobile', true );
+                    $getBirthDay        = get_user_meta( $registeringUserID, 'atlyman_birth_day', true );
+                    $getAddress         = get_user_meta( $registeringUserID, 'atlyman_address', true );
+
+                    $getProfession      = isset( $getProfession ) ? $getProfession : '';
+                    $getReaderId        = isset( $getReaderId ) ? $getReaderId : '';
+                    $getConfirmPassword = isset( $getConfirmPassword ) ? $getConfirmPassword : '';
+                    $getMobile          = isset( $getMobile ) ? $getMobile : '';
+                    $getBirthDay        = isset( $getBirthDay ) ? $getBirthDay : '';
+                    $getAddress         = isset( $getAddress ) ? $getAddress : '';
+
+                    update_user_meta( $registeringUserID, 'atlyman_profession', $profession, $getProfession );
+                    update_user_meta( $registeringUserID, 'atlyman_reader_id', $readerId, $getReaderId );
+                    update_user_meta( $registeringUserID, 'atlyman_confirm_password', $confirmPassword, $getConfirmPassword );
+                    update_user_meta( $registeringUserID, 'atlyman_mobile', $mobile, $getMobile );
+                    update_user_meta( $registeringUserID, 'atlyman_birth_day', $birthDay, $getBirthDay );
+                    update_user_meta( $registeringUserID, 'atlyman_address', $address, $getAddress );
+
                     $data['success_register'] = "Successfully Register !";
                 }
             }
