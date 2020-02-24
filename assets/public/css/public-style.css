@@ -4,6 +4,12 @@
 /**********************************************************************
                         START For Registation Page
 *********************************************************************/
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
 div.atlm-form-container {
     background-image: url(img/bg-book-1.jpg);
     background-size: cover;
@@ -93,6 +99,57 @@ h2.atlm-title {
     font-size: 45px;
 }
 
+/*************    Search bar container   *****************/
+
+div.atlm-search-container {
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+div.asc__filter-area {
+    width: 25%;
+    float: left;
+}
+
+div.asc__filter-area select {
+    width: 100%;
+    padding: 10px;
+    color: gray;
+    border-radius: 3px 0 0 3px;
+}
+
+div.asc__input-area {
+    width: 60%;
+    float: left;
+}
+
+div.asc__by-writer input{
+    float: left;
+    border-radius: 0;
+    width: 25%;
+}
+
+div.asc__by-word input{
+    float: left;
+    border-radius: 0;
+    width: 40%;
+}
+
+div.asc__btn-area {
+    width: 10%;
+    overflow: hidden;
+    float: right;
+}
+
+div.asc__btn-area button {
+    width: 100%;
+    border-radius: 0 3px 3px 0;
+    padding: 12px;
+}
+
+
+/*************    All books container   *****************/
+
 div.atlm-display-container {
     border: 1px solid #EEEEEE;
     text-align: center;
@@ -128,48 +185,7 @@ div.adc__book-details h5 {
 }
 
 
-
-
-
-
-
-
-.Book Name{}
-.Writer Name{}
-.Edition{}
-.Publish Year{}
-.adc__about-book{}
-
-div.atlm-search-container {
-    margin-bottom: 50px;
-}
-
-div.asc__filter-area {
-    border: 1px solid gray;
-    width: 30%;
-    float: left;
-    border-radius: 3px;
-}
-
-div.asc__filter-area label{}
-
-div.asc__book-search-area {
-    overflow: hidden;
-}
-
-div.asc__book-search-area input{
-    width: 85%;
-    float: left;
-}
-
-div.asc__book-search-area button{
-    width: 15%;
-}
-
-
-
-
-
+/*************    Pagination container   *****************/
 
 div.atlm-pagination-container{
     width: 35%;

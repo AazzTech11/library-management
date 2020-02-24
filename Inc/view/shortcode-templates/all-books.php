@@ -1,16 +1,47 @@
 <div class="wrap">
     <h2 class="atlm-title"><?php echo the_title(); ?></h2>
+
+<!--################  Search Bar Area START  ##################-->
     <div class="atlm-search-container">
-        <div class="asc__filter-area">
-            <label class="asc__filter-label">Filter by Category</label>
-        </div>
-        <div class="asc__book-search-area">
-            <input class="asc__search-input" type="search" placeholder="Search by word">
-            <button class="asc__search-button"><span class="dashicons dashicons-search"></span></button>
-        </div>
+        <form method="$_GET" action="<?php the_permalink();?>">
+            <div class="asc__filter-area">
+                <select class="asc__filter-select" name="atlm_filter_by_cat">
+                    <option value="0"><?php _e( 'Filter by Category', 'atlibraryman' ); ?></option>
+                    <?php
+                    foreach (  $data['categories'] as $category ){
+                      echo sprintf( "<option value='%s'>%s</option>",  $category->term_id, ucwords( $category->name ) );
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="asc__by-writer">
+                <input type="text" name="atlm_book_s_by_writer" placeholder="Search by writer">
+            </div>
+            <div class="asc__by-word">
+                <input type="text" name="atlm_book_s_by_word" placeholder="Search by word">
+            </div>
+            <div class="asc__btn-area">
+                <button class="asc__search-btn" type="submit" name="atlm_book_s_btn" value="atlmbs"><span class="dashicons dashicons-search"></span></button>
+                <!--<button class="asc__search-btn" name="submit" value="book_search"><span class="dashicons dashicons-search"></span></button>-->
+            </div>
+        </form>
     </div>
+    <!--################  Search Bar Area END  ##################-->
+
+    <!--################  Display All Books Area START  ##################-->
     <div class="atlm-display-container">
         <?php
+        $the_query = new \WP_Query( array('post_type' => 'at-book-cpt','category_name' => 'other', 'posts_per_page' => 2 ) );
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {    // Start looping over the query results.
+                $the_query->the_post();
+                echo get_the_title();
+            }
+        }else{
+            echo "Posts not found";
+        }
+
+
         if ( $data['posts']->have_posts() ) {           // Check that we have query results.
             while ( $data['posts']->have_posts() ) {    // Start looping over the query results.
                 $data['posts']->the_post();
@@ -55,7 +86,8 @@
             'next_text' => "<span class=\"dashicons dashicons-arrow-right-alt2\"></span>",
         );
 
-        echo paginate_links( $param ); ?>
-
+        echo paginate_links( $param );
+        ?>
     </div>
+    <!--################  Display All Books Area END  ##################-->
 </div>
